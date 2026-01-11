@@ -105,8 +105,7 @@ a {
   }
 }
 
-/* When header becomes fixed and the top bar is hidden, reduce the spacer
-   to the nav height so there isn't a visible gap under the fixed nav. */
+
 .site-header.is-fixed + .header-spacer.active {
   height: var(--nav-height);
 }
@@ -145,13 +144,21 @@ a {
   transition: color 0.25s ease;
 }
 
+  .top-link span {
+    display: inline !important;
+  }
+
 .top-link:hover {
   color: #dc2626;
 }
 
-/* Hide the top bar when header is fixed so only main nav stays visible */
 .site-header.is-fixed .top-bar {
   display: none;
+}
+@media (max-width: 991px) {
+  .site-header.is-fixed .top-bar {
+    display: block !important;
+  }
 }
 
 /* ===============================
@@ -168,7 +175,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative; /* allow absolute-centering of the menu */
+  position: relative; 
 }
 
 .nav-logo {
@@ -176,7 +183,7 @@ a {
   align-items: center;
   gap: 8px;
   background: #f3efef;
-  padding: 1px 1px; /* reduced padding for tighter fit */
+  padding: 1px 1px; 
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   margin-bottom: 10px;
@@ -187,18 +194,18 @@ a {
 }
 
 .nav-logo img {
-  height: 64px; /* slightly smaller main logo */
+  height: 64px; 
   display: block;
 }
 
 .nav-logo img.partner-logo {
-  height: 58px; /* slightly smaller partner logo */
+  height: 58px; 
   opacity: 0.98;
 }
 
 @media (max-width: 992px) {
   .nav-logo img {
-    height: 56px; /* scale down on tablet */
+    height: 56px; 
   }
   .nav-logo img.partner-logo {
     height: 44px;
@@ -207,10 +214,10 @@ a {
 
 @media (max-width: 768px) {
   .nav-logo img {
-    height: 44px; /* keep header compact on mobile */
+    height: 44px; 
   }
   .nav-logo img.partner-logo {
-    display: none; /* hide partner logo on small screens */
+    display: none; 
   }
 }
 
@@ -323,16 +330,13 @@ a {
   background: #b91c1c;
 }
 
-
-
-/* Spacer to prevent layout jump */
 .header-spacer {
   height: 0;
   transition: none;
 }
 
 .header-spacer.active {
-  height: calc(var(--top-bar-height) + var(--nav-height)); /* MATCH HEADER HEIGHT */
+  height: calc(var(--top-bar-height) + var(--nav-height)); 
 }
 
 
